@@ -30,7 +30,15 @@ resource "aws_instance" "dev_proj_1_ec2" {
   vpc_security_group_ids      = [var.sg_enable_ssh_https, var.sg_ec2_for_react_docker]
   associate_public_ip_address = var.enable_public_ip_address
 
-  user_data = var.user_data_install_docker
+  user_data = <<-EOF
+    #!/bin/bash
+    sudo apt-get update -y
+    sudo apt-get install -y ca-certificates curl
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    sudo apt-get update -y
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+  EOF
 
   metadata_options {
     http_endpoint = "enabled"  # Enable the IMDSv2 endpoint
