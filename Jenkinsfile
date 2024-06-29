@@ -15,10 +15,10 @@ pipeline {
 
                 // Clone the Git repository
                 git branch: 'main',
-                    url: 'https://github.com/akp-beni-github/monolithic_todo_app.git'
+                    url: 'https://github.com/akp-beni-github/devops-todolist-main.git'
 
                 sh "ls -lart"
-                sh "docker compose up -d --build"
+                
             }
         }
 
