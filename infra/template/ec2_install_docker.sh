@@ -1,24 +1,7 @@
-
-#!/bin/bash
-
-# Add Docker's official GPG key:
-#cd /home/ubuntu
-#sudo apt-get update -y
-#sudo apt-get install -y ca-certificates curl
-#sudo install -m 0755 -d /etc/apt/keyrings
-#sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-#sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-# Add the repository to Apt sources:
-#echo \
- # "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
- # $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
- # sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-#sudo apt-get update -y
-
-# Install Docker packages
-#sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-# Test Docker installation
-#sudo docker run hello-world
+    #!/bin/bash
+    sudo apt-get update -y
+    sudo apt-get install -y ca-certificates curl
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    sudo apt-get update -y
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
