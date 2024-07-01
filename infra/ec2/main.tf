@@ -8,9 +8,9 @@ variable "enable_public_ip_address" {}
 variable "user_data_install_apache" {}
 variable "ec2_sg_name_for_python_api" {}
 
-output "ssh_connection_string_for_ec2" {
-  value = format("%s%s", "ssh -i infra/my-key ubuntu@", aws_instance.dev_proj_1_ec2.public_ip)
-}
+/*output "ssh_connection_string_for_ec2" {
+  value = format("%s%s", "ssh -i /Users/ben/Documents/GitHub/todolist-devop-proj/devops-todolist-main/infra/my-key ubuntu@", aws_instance.dev_proj_1_ec2.public_ip)
+}*/
 
 output "dev_proj_1_ec2_instance_id" {
   value = aws_instance.dev_proj_1_ec2.id
