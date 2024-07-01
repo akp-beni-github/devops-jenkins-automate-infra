@@ -17,5 +17,5 @@ infra/.terraformrc
 infra/terraform.rc
 
 # Ignore specific key files within the infra folder
-infra/my-key
+
 infra/my-key.pub

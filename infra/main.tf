@@ -68,7 +68,7 @@ module "alb" {
 module "lb_target_group" {
   source                   = "./load-balancer-target-group"
   lb_target_group_name     = "jenkins-lb-target-group"
-  lb_target_group_port     = 3000
+  lb_target_group_port     = 5000
   lb_target_group_protocol = "HTTP"
   vpc_id                   = module.networking.dev_proj_1_vpc_id
   ec2_instance_id          = module.ec2.dev_proj_1_ec2_instance_id
@@ -87,7 +87,7 @@ module "alb" {
   lb_listener_port          = 80
   lb_listener_protocol      = "HTTP"
   lb_listener_default_action = "forward"
-  lb_target_group_attachment_port = 3000
+  lb_target_group_attachment_port = 5000
 }
 
 
