@@ -32,7 +32,7 @@ module "ec2" {
   sg_enable_ssh_https      = module.security_group.sg_ec2_sg_ssh_http_id
   ec2_sg_name_for_python_api     = module.security_group.sg_ec2_for_python_api
   enable_public_ip_address = true
-  user_data_install_apache = templatefile("./template/ec2_install_apache.sh", {})
+  user_data_install_flask = templatefile("./template/ec2_install_flask.sh", {})
 }
 /*
 module "lb_target_group" {
@@ -67,7 +67,7 @@ module "alb" {
 
 module "lb_target_group" {
   source                   = "./load-balancer-target-group"
-  lb_target_group_name     = "jenkins-lb-target-group"
+  lb_target_group_name     = "dev-proj-1-lb-target-group"
   lb_target_group_port     = 5000
   lb_target_group_protocol = "HTTP"
   vpc_id                   = module.networking.dev_proj_1_vpc_id
