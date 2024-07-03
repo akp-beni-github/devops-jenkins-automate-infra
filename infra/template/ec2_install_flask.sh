@@ -12,5 +12,5 @@ python3 -m venv venv
 source venv/bin/activate
 pip install flask
 pip install pymysql
-source venv/bin/activate
+
 python -m flask --app app.py run --host=0.0.0.0
