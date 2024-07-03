@@ -1,3 +1,5 @@
+# infra
+
 <img width="685" alt="Screenshot 2567-07-03 at 17 03 10" src="https://github.com/akp-beni-github/devops-jenkins-automate-infra/assets/162615013/7d3cd8c6-fc62-49c7-9a5f-043a6b07e6d0">
 
 # before following the setup
@@ -27,3 +29,7 @@
 - note that you have to access these websites with http not https
 - heres' my python flask application repo
 https://github.com/akp-beni-github/flask-python-mysql-db.git
+
+
+# discussion
+- there's no real usage of application load balancer since both ec2 instances are not setting up as auto-scaled
