@@ -11,6 +11,9 @@ output "dev_proj_1_vpc_id" {
 output "dev_proj_1_public_subnets" {
   value = aws_subnet.dev_proj_1_public_subnets.*.id
 }
+output "dev_proj_1_private_subnets" {
+  value = aws_subnet.dev_proj_1_private_subnets.*.id
+}
 
 output "public_subnet_cidr_block" {
   value = aws_subnet.dev_proj_1_public_subnets.*.cidr_block
@@ -77,7 +80,7 @@ resource "aws_route_table_association" "dev_proj_1_public_rt_subnet_association"
 }
 
 # Private Route Table
-resource "aws_route_table" "dev_proj_1_private_subnets" {
+resource "aws_route_table" "dev_proj_1_private_route_table" {
   vpc_id = aws_vpc.dev_proj_1_vpc_eu_central_1.id
   #depends_on = [aws_nat_gateway.nat_gateway]
   tags = {
@@ -89,5 +92,5 @@ resource "aws_route_table" "dev_proj_1_private_subnets" {
 resource "aws_route_table_association" "dev_proj_1_private_rt_subnet_association" {
   count          = length(aws_subnet.dev_proj_1_private_subnets)
   subnet_id      = aws_subnet.dev_proj_1_private_subnets[count.index].id
-  route_table_id = aws_route_table.dev_proj_1_private_subnets.id
+  route_table_id = aws_route_table.dev_proj_1_private_route_table.id
 }
