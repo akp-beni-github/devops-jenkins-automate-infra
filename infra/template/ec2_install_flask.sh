@@ -15,7 +15,7 @@ pip install pymysql
 
 
 yes | sudo apt-get install mysql-client
-mysql -u your_username -p
+mysql -u dbuser -p dbpassword
 CREATE DATABASE devprojdb;
 USE devprojdb;
 CREATE TABLE example_table (
