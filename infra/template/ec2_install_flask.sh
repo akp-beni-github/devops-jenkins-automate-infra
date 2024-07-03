@@ -12,18 +12,5 @@ python3 -m venv venv
 source venv/bin/activate
 pip install flask
 pip install pymysql
-
-
-yes | sudo apt-get install mysql-client
-mysql -u dbuser -p dbpassword
-CREATE DATABASE devprojdb;
-USE devprojdb;
-CREATE TABLE example_table (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    data TEXT
-);
-exit
-sleep 20
-
+source venv/bin/activate
 python -m flask --app app.py run --host=0.0.0.0
