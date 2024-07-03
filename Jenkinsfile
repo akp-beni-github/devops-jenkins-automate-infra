@@ -15,7 +15,7 @@ pipeline {
 
                 // Clone the Git repository
                 git branch: 'main',
-                    url: 'https://github.com/akp-beni-github/devops-todolist-main.git'
+                    url: 'https://github.com/akp-beni-github/devops-jenkins-automate-infra.git'
 
                 sh "ls -lart"
                 
