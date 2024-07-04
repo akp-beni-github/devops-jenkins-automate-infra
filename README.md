@@ -23,7 +23,11 @@
 
 # important notes
 - with this specific environment you could not access both jenkins and application with https since i do not have available domain name
-- but here's some of my understanding of https credential and route 53
+  but here's some of my understanding of https certificate and route 53
+
+  <img width="941" alt="Screenshot 2567-06-28 at 16 59 34" src="https://github.com/akp-beni-github/devops-jenkins-automate-infra/assets/162615013/026506bc-8a7f-42c8-92c6-527578d386a0">
+  <img width="1137" alt="Screenshot 2567-06-28 at 17 21 59" src="https://github.com/akp-beni-github/devops-jenkins-automate-infra/assets/162615013/8f8d40b7-7beb-45e0-908b-144fb880e376">
+
 
   
 - note that you have to access these websites with http not https
